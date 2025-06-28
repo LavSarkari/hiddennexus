@@ -22,8 +22,8 @@ A modern, anonymous confession platform with a beautiful glassmorphism UI, anima
 ---
 
 ## 🖼️ Screenshots
-> ![Homepage Screenshot](./screenshots/homepage.png)
-> ![Confessions Feed Screenshot](./screenshots/confessions.png)
+> ![Homepage Screenshot](https://github.com/user-attachments/assets/1aaffa6d-398e-4804-827a-d96b3a6349eb)
+> ![Confessions Subbmission](https://github.com/user-attachments/assets/6e81d1b4-d7c4-47e4-8be1-14b7e19cb05f)
 
 ---
 
