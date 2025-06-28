@@ -1,4 +1,4 @@
-# 🌀 HiddenNexus
+# 🌀 [HiddenNexus](https://hiddennexus.vercel.app/)
 
 A modern, anonymous confession platform with a beautiful glassmorphism UI, animated backgrounds, and real-time social features. Built with React, Tailwind CSS, and Google Sheets (via SheetDB.io) as the backend.
 
@@ -29,7 +29,7 @@ A modern, anonymous confession platform with a beautiful glassmorphism UI, anima
 
 ## 🛠️ Tech Stack
 - **Frontend:** React, Tailwind CSS, Framer Motion, GSAP
-- **Backend:** Google Sheets (via [SheetDB.io](https://sheetdb.io))
+- **Backend:** Google Sheets (via [SheetDB.io](https://sheetdb.io)) (REST API)
 - **Hosting:** Vercel / Netlify (recommended)
 
 ---
@@ -38,8 +38,8 @@ A modern, anonymous confession platform with a beautiful glassmorphism UI, anima
 
 ### 1. **Clone the repo**
 ```bash
-git clone https://github.com/yourusername/hidden-nexus.git
-cd hidden-nexus
+git clone https://github.com/lavsarkari/hiddennexus.git
+cd hiddennexus
 ```
 
 ### 2. **Install dependencies**
@@ -47,7 +47,7 @@ cd hidden-nexus
 npm install
 ```
 
-### 3. **Configure SheetDB.io**
+### 3. **Configure SheetDB.io** (i've left my key in the code.. dw its useless moreover it'll expire soon as 500 req per month)
 - Create a Google Sheet with columns: `id`, `title`, `content`, `category`, `timestamp`, `likes`, `comments`.
 - Connect it to [SheetDB.io](https://sheetdb.io) and get your API endpoint.
 - Update the endpoint in your code (see `src/pages/Confess.js` and `src/pages/Confessions.js`).
@@ -77,171 +77,12 @@ npm start
 - UI/UX: [LavSarkari](https://github.com/lavsarkari)
 - Particles & Animations: OGL, GSAP, Framer Motion
 - Backend: Google Sheets + SheetDB.io
+- Ai ofc, was vibecoding it :>
 
 ---
 
 ## 📄 License
 [MIT](./LICENSE)
-
-## Features
-
-- 🔐 **Authentication**: Email-password and Discord OAuth support
-- 📝 **Anonymous Confessions**: Share thoughts and experiences anonymously
-- 🏷️ **Categories**: Organize confessions by topics
-- 💬 **Comments**: Engage with other confessions
-- ❤️ **Likes**: Show support for confessions
-- 🔍 **Search & Filter**: Find confessions easily
-- 📱 **Responsive Design**: Works on all devices
-
-## Tech Stack
-
-- **Frontend**: React 18, React Router v6
-- **Styling**: Tailwind CSS
-- **Backend**: Firebase (Authentication, Firestore)
-- **Authentication**: Email/Password + Discord OAuth
-
-## Prerequisites
-
-- Node.js (v14 or higher)
-- npm or yarn
-- Firebase project
-
-## Setup Instructions
-
-### 1. Clone and Install Dependencies
-
-```bash
-npm install
-```
-
-### 2. Firebase Configuration
-
-1. Create a new Firebase project at [Firebase Console](https://console.firebase.google.com/)
-2. Enable Authentication with Email/Password and Discord providers
-3. Create a Firestore database
-4. Get your Firebase configuration
-
-### 3. Configure Firebase
-
-1. Open `src/firebase.js`
-2. Replace the placeholder configuration with your actual Firebase config:
-
-```javascript
-const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-project.firebaseapp.com",
-  projectId: "your-project-id",
-  storageBucket: "your-project.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "your-app-id"
-};
-```
-
-### 4. Discord OAuth Setup
-
-1. Go to [Discord Developer Portal](https://discord.com/developers/applications)
-2. Create a new application
-3. Add OAuth2 redirect URI: `https://your-project.firebaseapp.com/__/auth/handler`
-4. Copy the Client ID and Client Secret
-5. Add them to Firebase Authentication > Sign-in method > Discord
-
-### 5. Firestore Rules
-
-Set up Firestore security rules:
-
-```javascript
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /confessions/{confessionId} {
-      allow read: if true;
-      allow write: if request.auth != null;
-    }
-  }
-}
-```
-
-### 6. Start Development Server
-
-```bash
-npm start
-```
-
-The app will be available at `http://localhost:3000`
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── Layout.js          # Main layout wrapper
-│   └── Navbar.js          # Navigation component
-├── pages/
-│   ├── Home.js            # Landing page
-│   ├── Confess.js         # Confession form
-│   ├── Dashboard.js       # Confessions list
-│   └── ConfessionDetail.js # Individual confession view
-├── firebase.js            # Firebase configuration
-├── App.js                 # Main app component
-├── index.js              # App entry point
-└── index.css             # Global styles
-```
-
-## Routes
-
-- `/` - Home page with welcome message
-- `/confess` - Form to submit new confessions
-- `/dashboard` - View all confessions with search/filter
-- `/confession/:id` - Individual confession detail page
-
-## Features in Detail
-
-### Authentication
-- Discord OAuth integration
-- Email/password authentication
-- Persistent login state
-- Protected routes (future enhancement)
-
-### Confessions
-- Anonymous posting
-- Category organization
-- Character limits (1000 chars for confessions, 500 for comments)
-- Timestamp tracking
-- Like and comment functionality
-
-### User Experience
-- Responsive design
-- Loading states
-- Error handling
-- Form validation
-- Real-time updates
-
-## Deployment
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-### Deploy to Firebase Hosting
-
-1. Install Firebase CLI: `npm install -g firebase-tools`
-2. Login: `firebase login`
-3. Initialize: `firebase init hosting`
-4. Deploy: `firebase deploy`
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## Support
 
