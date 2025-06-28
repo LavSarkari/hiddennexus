@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Ice dark glassmorphism background */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #181c23 0%, #232a34 100%);
+  background-attachment: fixed;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Premium glass card polish */
+.glass {
+  background: rgba(36, 39, 48, 0.65);
+  box-shadow: 0 6px 32px 0 rgba(30,40,60,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border-radius: 22px;
+  border: 1.5px solid rgba(255, 255, 255, 0.10);
+  padding: 2rem 1.5rem;
+  position: relative;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.glass:hover {
+  box-shadow: 0 10px 40px 0 rgba(120,180,255,0.18), 0 2px 12px 0 rgba(30,40,60,0.18);
+  border: 1.5px solid rgba(120,180,255,0.18);
+}
+
+/* Button polish */
+.btn-ice {
+  background: linear-gradient(90deg, #3a3f47 0%, #5c6a7a 100%);
+  color: #eaf6ff;
+  font-weight: 700;
+  border-radius: 14px;
+  padding: 0.75rem 2rem;
+  letter-spacing: 0.02em;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+  box-shadow: 0 2px 12px 0 rgba(60, 80, 120, 0.13);
+  border: 1.5px solid rgba(120,180,255,0.10);
+  font-size: 1.1rem;
+}
+.btn-ice:hover {
+  filter: brightness(1.10);
+  box-shadow: 0 6px 24px 0 rgba(120,180,255,0.15);
+  transform: translateY(-2px) scale(1.04);
+  background: linear-gradient(90deg, #5c6a7a 0%, #3a3f47 100%);
+  border: 1.5px solid rgba(120,180,255,0.18);
+}
+
+/* Text polish */
+.text-ice {
+  color: #eaf6ff;
+  text-shadow: 0 2px 8px rgba(80,120,255,0.10);
+}
+.text-ice-glow {
+  color: #eaf6ff;
+  text-shadow: 0 2px 16px rgba(120,180,255,0.18), 0 1px 2px rgba(0,0,0,0.18);
+}
+.text-blue-100 {
+  color: #b3cfff;
+}
+
+/* Navbar polish */
+.navbar-glass {
+  border-bottom: 1.5px solid rgba(120,180,255,0.10);
+  box-shadow: 0 2px 18px 0 rgba(30,40,60,0.13);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+}
+
+/* Responsive glass card grid */
+@media (max-width: 768px) {
+  .glass {
+    padding: 1.2rem 0.8rem;
+  }
+}
+
+/* Cursor shadow effect */
+.cursor-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(120,180,255,0.10) 0%, rgba(30,40,60,0.08) 80%, transparent 100%);
+  box-shadow: 0 0 32px 8px rgba(120,180,255,0.08);
+  z-index: 9999;
+  transition: transform 0.12s cubic-bezier(.4,2,.6,1), opacity 0.2s;
+  opacity: 0.5;
+  mix-blend-mode: lighten;
+}
+
+/* Glass reflection effect */
+.glass-reflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 60%, transparent 100%);
+  opacity: 0.45;
+  transform: translateY(-30%) skewY(-8deg);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.glass:hover .glass-reflection {
+  opacity: 0.7;
+  transform: translateY(-10%) skewY(-8deg) scale(1.04);
+} 
