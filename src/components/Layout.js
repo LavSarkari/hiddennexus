@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import { useAuth } from './AuthContext';
 import Particles from './Particles';
@@ -22,8 +22,11 @@ const Footer = () => (
 
 const Layout = () => {
   const { message, setMessage } = useAuth();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  
   return (
-    <div className="min-h-screen sm:h-screen w-full flex flex-col items-center bg-transparent px-1 sm:px-4 sm:overflow-hidden">
+    <div className={`min-h-screen sm:h-screen w-full flex flex-col items-center bg-transparent px-1 sm:px-4 ${isHomePage ? 'sm:overflow-hidden' : ''}`}>
       {/* Fullscreen Particles Background */}
       <div style={{ position: 'fixed', inset: 0, zIndex: 0, width: '100vw', height: '100vh', background: '#000' }}>
         <Particles

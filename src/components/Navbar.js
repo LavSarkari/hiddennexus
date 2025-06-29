@@ -20,6 +20,12 @@ const Navbar = () => {
           {/* Right: Navigation Links */}
           <Dock.Right className="gap-2 pr-2">
             <Link
+              to="/about"
+              className={`px-4 py-2 text-white/80 hover:text-white hover:bg-white/20 rounded-full transition-all duration-200 text-sm font-semibold ${location.pathname === '/about' ? 'bg-white/20 text-white' : ''}`}
+            >
+              About
+            </Link>
+            <Link
               to="/confess"
               className={`px-4 py-2 text-white/80 hover:text-white hover:bg-white/20 rounded-full transition-all duration-200 text-sm font-semibold ${location.pathname === '/confess' ? 'bg-white/20 text-white' : ''}`}
             >

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
+import About from './pages/About';
 import Confess from './pages/Confess';
 import ConfessionDetail from './pages/ConfessionDetail';
 import Login from './pages/Login';
@@ -29,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
             <Route path="login" element={<Login />} />
             <Route path="confessions" element={<Confessions />} />
             <Route path="confess" element={<Confess />} />
